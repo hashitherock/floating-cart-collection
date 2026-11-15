@@ -1,4 +1,4 @@
-import { ChevronRight, ShoppingBag, ShoppingCart } from 'lucide-react';
+import { ChevronRight, ShoppingBag, ShoppingBasket, ShoppingCart } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Tooltip, TooltipContent, TooltipTrigger } from '@/components/ui/tooltip';
 import { cartTotal, formatPrice, type CartStyle } from '@/lib/cart-collection';
@@ -15,12 +15,38 @@ interface FloatingCartProps {
 
 export function FloatingCart({ style, count, animationKey, onOpen, label = 'Open shopping cart' }: FloatingCartProps) {
   const Glyph = style === 'commerce' ? ShoppingBag : ShoppingCart;
-  const isDetailed = ['signature-stack', 'checkout-pill', 'halo-bag', 'folded-tote'].includes(style);
+  const isDetailed = ['ribbon-dock', 'orbit-cart', 'ticket-cart', 'jewel-basket', 'signature-stack', 'checkout-pill', 'halo-bag', 'folded-tote'].includes(style);
   const price = formatPrice(cartTotal(count));
   const items = `${count} ${count === 1 ? 'item' : 'items'}`;
 
   function renderDetailedCart() {
     switch (style) {
+      case 'ribbon-dock':
+        return <>
+          <span className="ribbon-face"><ShoppingBag className="detail-bag-glyph" /><span className="detail-items">{items}</span></span>
+          <span className="detail-total ribbon-total">{price}</span>
+        </>;
+      case 'orbit-cart':
+        return <>
+          <span className="orbit-face"><ShoppingBasket className="detail-bag-glyph" /><span className="detail-items">{items}</span></span>
+          <span className="detail-total orbit-total">{price}</span>
+        </>;
+      case 'ticket-cart':
+        return <>
+          <span className="ticket-icon"><ShoppingCart className="detail-bag-glyph" /></span>
+          <span className="ticket-details"><span className="detail-items">{items}</span><span className="detail-total">{price}</span></span>
+        </>;
+      case 'jewel-basket':
+        return <>
+          <svg className="jewel-shape" viewBox="0 0 110 122" aria-hidden="true">
+            <path className="jewel-body" d="M8 39 27 29h56l19 10-9 68-38 11-38-11Z" />
+            <path className="jewel-facet" d="m8 39 22 12 25 67-38-11Z" />
+            <path className="jewel-facet jewel-facet-right" d="m102 39-22 12-25 67 38-11Z" />
+            <path className="jewel-handle" d="M36 35V24a19 19 0 0 1 38 0v11" />
+            <path className="jewel-edge" d="m8 39 22 12h50l22-12" />
+          </svg>
+          <span className="jewel-content"><ShoppingBasket className="detail-bag-glyph" /><span className="detail-items">{items}</span><span className="detail-total">{price}</span></span>
+        </>;
       case 'signature-stack':
         return <>
           <span className="stack-face"><ShoppingBag className="detail-bag-glyph" /><span className="detail-items">{items}</span></span>
@@ -49,6 +75,7 @@ export function FloatingCart({ style, count, animationKey, onOpen, label = 'Open
   }
 
   return (
+    <span className={`cart-motion motion-${style}`}>
     <Tooltip>
       <TooltipTrigger asChild>
         <Button
@@ -67,5 +94,6 @@ export function FloatingCart({ style, count, animationKey, onOpen, label = 'Open
       </TooltipTrigger>
       <TooltipContent side="top">View shopping cart · {price}</TooltipContent>
     </Tooltip>
+    </span>
   );
 }

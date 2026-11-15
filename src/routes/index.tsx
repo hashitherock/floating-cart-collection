@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from 'react';
-import { ArrowDown, ArrowUpRight, Bookmark, Check, Minus, Monitor, Plus, ShoppingBag, Smartphone } from 'lucide-react';
+import { ArrowUpRight, Bookmark, Check, Minus, Monitor, Plus, ShoppingBag, Smartphone } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Tooltip, TooltipContent, TooltipTrigger } from '@/components/ui/tooltip';
 import { CartDesignCard } from '@/components/cart-design-card';
@@ -13,9 +13,9 @@ export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       { title: 'Floating Cart Collection — Sholok Shopping' },
-      { name: 'description', content: 'Explore twelve distinctive Sholok Shopping floating cart designs, including four signature shopping bags with live item counts and totals.' },
+      { name: 'description', content: 'Explore sixteen animated Sholok Shopping floating cart designs with live item counts, totals, and a right-side shopping cart.' },
       { property: 'og:title', content: 'Floating Cart Collection — Sholok Shopping' },
-      { property: 'og:description', content: 'Twelve signature cart concepts. One unmistakable Sholok Shopping identity.' },
+      { property: 'og:description', content: 'Sixteen animated cart concepts. One unmistakable Sholok Shopping identity.' },
       { property: 'og:type', content: 'website' },
       { name: 'twitter:card', content: 'summary_large_image' },
     ],
@@ -36,7 +36,7 @@ function Index() {
   const [device, setDevice] = useState<'desktop' | 'mobile'>('desktop');
   const [activeTab, setActiveTab] = useState<'all' | 'shortlist'>('all');
   const [shortlist, setShortlist] = useState<CartStyle[]>([]);
-  const [selected, setSelected] = useState<CartStyle>('signature-stack');
+  const [selected, setSelected] = useState<CartStyle>('ribbon-dock');
   const [count, setCount] = useState(initialCartCount);
   const [animationKey, setAnimationKey] = useState(0);
   const [cartOpen, setCartOpen] = useState(false);
@@ -79,12 +79,12 @@ function Index() {
         </div>
       </header>
 
-      <main className="page-shell">
+      <main className="page-shell collection-main">
         <section className="intro">
           <div>
             <div className="eyebrow"><span className="eyebrow-dot" /> Sholok Shopping · Design collection</div>
             <h1 className="page-title">Floating cart collection<span className="text-primary">.</span></h1>
-            <p className="intro-description">A signature bag. A beautiful little detail.<br />Twelve unique expressions of the Sholok Shopping identity.</p>
+            <p className="intro-description">A signature bag. A beautiful little detail.<br />Sixteen unique expressions of the Sholok Shopping identity.</p>
           </div>
           <div className="palette" aria-label="Sholok brand colors">
             <div className="palette-color"><span className="palette-swatch bg-primary" /><div><strong>Signature purple</strong><small>#5D0096</small></div></div>
@@ -128,7 +128,7 @@ function Index() {
       </main>
 
       <footer className="footer"><div className="page-shell footer-inner"><span>Thoughtfully designed for Sholok Shopping.</span><span className="footer-note"><Check size={11} className="text-primary" /> {cartDesigns.length} concepts <span className="mx-1">·</span> Desktop & mobile <span className="mx-1">·</span> Interactive collection</span></div></footer>
-      <div className="live-float" data-testid="live-floating-cart"><span className="live-float-label">Live cart <ArrowDown className="ml-1 inline size-2.5 -rotate-45" /></span><FloatingCart style={selected} count={count} animationKey={animationKey} onOpen={() => setCartOpen(true)} label="Open live floating cart" /></div>
+      <div className="live-float" data-testid="live-floating-cart"><FloatingCart style={selected} count={count} animationKey={animationKey} onOpen={() => setCartOpen(true)} label="Open live floating cart" /></div>
       <ShoppingCartDrawer open={cartOpen} onOpenChange={setCartOpen} count={count} onChange={updateQuantity} onClear={() => { setCount(0); setAnimationKey(current => current + 1); setLastAction('Shopping cart cleared'); }} />
     </div>
   );
