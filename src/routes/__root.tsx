@@ -83,7 +83,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "description", content: "The Sholok Shopping floating cart design collection." },
       { name: "author", content: "Sholok Shopping" },
       { property: "og:title", content: "Sholok Shopping — Design Collection" },
-      { property: "og:description", content: "Twelve signature floating cart concepts for Sholok Shopping." },
+      { property: "og:description", content: "Sixteen animated floating cart concepts for Sholok Shopping." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],

@@ -1,4 +1,4 @@
-export type CartStyle = 'signature-stack' | 'checkout-pill' | 'halo-bag' | 'folded-tote' | 'circular' | 'gradient' | 'glass' | 'three-dimensional' | 'outline' | 'capsule' | 'dual' | 'commerce';
+export type CartStyle = 'ribbon-dock' | 'orbit-cart' | 'ticket-cart' | 'jewel-basket' | 'signature-stack' | 'checkout-pill' | 'halo-bag' | 'folded-tote' | 'circular' | 'gradient' | 'glass' | 'three-dimensional' | 'outline' | 'capsule' | 'dual' | 'commerce';
 
 export interface CartDesign {
   id: CartStyle;
@@ -6,9 +6,14 @@ export interface CartDesign {
   description: string;
   treatment: string;
   isNew?: boolean;
+  collection?: 'motion' | 'signature';
 }
 
 export const cartDesigns: CartDesign[] = [
+  { id: 'ribbon-dock', name: 'Ribbon Dock', description: 'A slender purple dock, wrapped with a signature red-orange ribbon.', treatment: 'Tailored · Ribbon', isNew: true, collection: 'motion' },
+  { id: 'orbit-cart', name: 'Orbit Cart', description: 'A softly orbiting frame around a bold little shopping basket.', treatment: 'Fluid · Orbit', isNew: true, collection: 'motion' },
+  { id: 'ticket-cart', name: 'Ticket Cart', description: 'A crisp white ticket with a purple basket and a vivid price accent.', treatment: 'Fresh · Ticket', isNew: true, collection: 'motion' },
+  { id: 'jewel-basket', name: 'Jewel Basket', description: 'Faceted purple, a sculpted handle, and a little jewel-like presence.', treatment: 'Sculpted · Faceted', isNew: true, collection: 'motion' },
   { id: 'signature-stack', name: 'Signature Stack', description: 'A sculpted shopping bag, finished with a bold red-orange total.', treatment: 'Signature · Stacked', isNew: true },
   { id: 'checkout-pill', name: 'Checkout Pill', description: 'Your bag and total, side by side. Slim, effortless, and always close.', treatment: 'Sleek · Horizontal', isNew: true },
   { id: 'halo-bag', name: 'Halo Bag', description: 'A porcelain-white frame, a purple bag, and a neatly tucked price tab.', treatment: 'Light · Halo', isNew: true },
