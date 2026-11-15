@@ -222,12 +222,13 @@
 .design-stage[data-device="mobile"] .store-ghost { width: 83px; height: 138px; top: 22px; left: calc(50% - 42px); border-radius: 12px; border: 3px solid color-mix(in oklch, var(--primary) 14%, var(--background)); }
 .design-stage[data-device="mobile"] .store-ghost::after { top: 39px; height: 69px; left: 8px; right: 8px; background: color-mix(in oklch, var(--primary) 6%, var(--background)); }
 .design-stage[data-device="mobile"] .stage-cart { transform: translate(39px, 39px) scale(.79); }
+.design-stage[data-device="mobile"]:has(.cart-capsule) .stage-cart { transform: translate(19px, 39px) scale(.79); }
 .stage-cart { z-index: 1; position: relative; padding-top: 6px; transition: transform 250ms; }
 .stage-selected { position: absolute; bottom: 11px; font-size: 9px; color: var(--primary); display: flex; align-items: center; gap: 4px; }
 .design-info { padding: 17px 17px 13px; }
 .design-name { font-size: 13px; font-weight: 750; line-height: 1.5; }
 .design-description { font-size: 10px; color: var(--muted-foreground); line-height: 1.7; margin-top: 4px; min-height: 34px; }
-.design-card-footer { display: flex; align-items: center; justify-content: space-between; margin-top: 12px; padding-top: 11px; border-top: 1px solid var(--border); }
+.design-card-footer { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 5px; margin-top: 12px; padding-top: 11px; border-top: 1px solid var(--border); }
 .style-tag { font-size: 8px; letter-spacing: .8px; text-transform: uppercase; color: var(--muted-foreground); }
 .floating-cart { position: relative; display: flex; flex-shrink: 0; align-items: center; justify-content: center; width: 65px; height: 65px; padding: 0; color: var(--primary-foreground); background: var(--primary); border: 0; box-shadow: var(--shadow-cart); transition: transform 200ms, box-shadow 200ms; overflow: visible; border-radius: 50%; }
 .floating-cart:hover { background: var(--primary); transform: translateY(-3px) scale(1.05); box-shadow: var(--shadow-capsule); }
