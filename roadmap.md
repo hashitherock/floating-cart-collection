@@ -1,5 +1,10 @@
 # Sholok Shopping cart collection
 
+- [ ] Animate every cart with gentle idle motion, hover feedback, and add-to-cart feedback.
+- [ ] Move the fixed live cart to the vertical middle of the right edge without covering the gallery.
+- [ ] Add four distinct new concepts and retain all existing designs.
+- [ ] Verify positioning, motion, reduced-motion support, and cart interactions on desktop and mobile.
+
 - [x] Add four refined floating-cart designs inspired by the uploaded item-count and total-price reference.
 - [x] Feature the new designs first while preserving the original eight concepts.
 - [x] Verify live totals, cart drawer, and fitting at the current preview size and on mobile.
