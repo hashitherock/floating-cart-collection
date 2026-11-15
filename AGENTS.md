@@ -33,3 +33,4 @@ use the editor.
 - Keep the comparison gallery and shared sample cart frontend-only, with in-memory React state; the requested prototypes must not depend on a backend or browser persistence.
 - Define cart concept metadata and cart quantity rules in browser-safe shared modules, with individual rendering components; this keeps the gallery, previews, and drawer consistent and testable.
 - Keep all visual treatments in semantic global tokens and design-system variants; each concept must remain distinct without bypassing the brand theme.
+- Animate a wrapper independently from cart hover and quantity feedback, and reserve a right-side rail for the fixed cart; this prevents competing transforms and gallery occlusion.
