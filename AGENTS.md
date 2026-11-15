@@ -28,3 +28,8 @@ use the editor.
   own key and store it in Secrets.
 - **Secrets.** Lovable manages them. Do not put secret values in the repo.
 <!-- LOVABLE:END -->
+
+## Application architecture
+- Keep the comparison gallery and shared sample cart frontend-only, with in-memory React state; the requested prototypes must not depend on a backend or browser persistence.
+- Define cart concept metadata and cart quantity rules in browser-safe shared modules, with individual rendering components; this keeps the gallery, previews, and drawer consistent and testable.
+- Keep all visual treatments in semantic global tokens and design-system variants; the eight concepts must remain distinct without bypassing the brand theme.
