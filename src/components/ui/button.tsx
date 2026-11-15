@@ -16,6 +16,11 @@ const buttonVariants = cva(
         secondary: "bg-secondary text-secondary-foreground shadow-sm hover:bg-secondary/80",
         ghost: "hover:bg-accent hover:text-accent-foreground",
         link: "text-primary underline-offset-4 hover:underline",
+        cart: "floating-cart",
+        collectionTab: "text-muted-foreground hover:bg-muted data-[active=true]:bg-secondary data-[active=true]:text-primary",
+        device: "text-muted-foreground hover:text-primary data-[active=true]:bg-background data-[active=true]:text-primary data-[active=true]:shadow-sm",
+        shortlist: "text-muted-foreground hover:bg-background/80 hover:text-primary data-[saved=true]:text-primary data-[saved=true]:bg-background/80",
+        preview: "text-primary hover:bg-secondary data-[active=true]:text-muted-foreground",
       },
       size: {
         default: "h-9 px-4 py-2",
