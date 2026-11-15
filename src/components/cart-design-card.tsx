@@ -19,10 +19,10 @@ interface CartDesignCardProps {
 
 export function CartDesignCard({ design, index, selected, saved, device, count, animationKey, onSelect, onSave, onOpen }: CartDesignCardProps) {
   return (
-    <article className="design-card" data-selected={selected} aria-label={`${design.name} design`}>
+    <article className="design-card" data-selected={selected} data-new={design.isNew || undefined} aria-label={`${design.name} design`}>
       <div className={`design-stage stage-${design.id}`} data-device={device}>
         <div className="stage-meta">
-          <span className="design-number">{String(index + 1).padStart(2, '0')}</span>
+          <div className="stage-index"><span className="design-number">{String(index + 1).padStart(2, '0')}</span>{design.isNew && <span className="new-design-label">NEW</span>}</div>
           <Tooltip>
             <TooltipTrigger asChild>
               <Button variant="shortlist" size="icon" className="size-7" data-saved={saved} aria-pressed={saved} aria-label={`${saved ? 'Remove' : 'Save'} ${design.name} ${saved ? 'from' : 'to'} shortlist`} onClick={onSave}>

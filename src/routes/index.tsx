@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from 'react';
-import { ArrowDown, ArrowUpRight, Bookmark, Check, Minus, Monitor, Plus, ShoppingBag, ShoppingCart, Smartphone } from 'lucide-react';
+import { ArrowDown, ArrowUpRight, Bookmark, Check, Minus, Monitor, Plus, ShoppingBag, Smartphone } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Tooltip, TooltipContent, TooltipTrigger } from '@/components/ui/tooltip';
 import { CartDesignCard } from '@/components/cart-design-card';
@@ -13,9 +13,9 @@ export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       { title: 'Floating Cart Collection — Sholok Shopping' },
-      { name: 'description', content: 'Explore eight distinctive Sholok Shopping floating cart designs, with interactive desktop and mobile previews and a live shopping cart.' },
+      { name: 'description', content: 'Explore twelve distinctive Sholok Shopping floating cart designs, including four signature shopping bags with live item counts and totals.' },
       { property: 'og:title', content: 'Floating Cart Collection — Sholok Shopping' },
-      { property: 'og:description', content: 'Eight signature cart concepts. One unmistakable Sholok Shopping identity.' },
+      { property: 'og:description', content: 'Twelve signature cart concepts. One unmistakable Sholok Shopping identity.' },
       { property: 'og:type', content: 'website' },
       { name: 'twitter:card', content: 'summary_large_image' },
     ],
@@ -36,7 +36,7 @@ function Index() {
   const [device, setDevice] = useState<'desktop' | 'mobile'>('desktop');
   const [activeTab, setActiveTab] = useState<'all' | 'shortlist'>('all');
   const [shortlist, setShortlist] = useState<CartStyle[]>([]);
-  const [selected, setSelected] = useState<CartStyle>('circular');
+  const [selected, setSelected] = useState<CartStyle>('signature-stack');
   const [count, setCount] = useState(initialCartCount);
   const [animationKey, setAnimationKey] = useState(0);
   const [cartOpen, setCartOpen] = useState(false);
@@ -84,7 +84,7 @@ function Index() {
           <div>
             <div className="eyebrow"><span className="eyebrow-dot" /> Sholok Shopping · Design collection</div>
             <h1 className="page-title">Floating cart collection<span className="text-primary">.</span></h1>
-            <p className="intro-description">Eight unique expressions. One unmistakable identity.<br />A little detail that makes the whole shopping experience feel different.</p>
+            <p className="intro-description">A signature bag. A beautiful little detail.<br />Twelve unique expressions of the Sholok Shopping identity.</p>
           </div>
           <div className="palette" aria-label="Sholok brand colors">
             <div className="palette-color"><span className="palette-swatch bg-primary" /><div><strong>Signature purple</strong><small>#5D0096</small></div></div>
@@ -95,7 +95,7 @@ function Index() {
         <section aria-label="Cart design comparison">
           <div className="gallery-toolbar">
             <div className="gallery-tabs" aria-label="Filter collection">
-              <Button variant="collectionTab" size="sm" className="gap-2 text-[10px]" data-active={activeTab === 'all'} aria-pressed={activeTab === 'all'} onClick={() => setActiveTab('all')}>All designs <span className="tab-count">8</span></Button>
+              <Button variant="collectionTab" size="sm" className="gap-2 text-[10px]" data-active={activeTab === 'all'} aria-pressed={activeTab === 'all'} onClick={() => setActiveTab('all')}>All designs <span className="tab-count">{cartDesigns.length}</span></Button>
               <Button variant="collectionTab" size="sm" className="gap-1.5 text-[10px]" data-active={activeTab === 'shortlist'} aria-pressed={activeTab === 'shortlist'} onClick={() => setActiveTab('shortlist')}><Bookmark className="size-3" /> Shortlist <span className="tab-count">{shortlist.length}</span></Button>
             </div>
             <div className="preview-controls">
@@ -127,7 +127,7 @@ function Index() {
         </section>
       </main>
 
-      <footer className="footer"><div className="page-shell footer-inner"><span>Thoughtfully designed for Sholok Shopping.</span><span className="footer-note"><Check size={11} className="text-primary" /> 8 concepts <span className="mx-1">·</span> Desktop & mobile <span className="mx-1">·</span> Interactive collection</span></div></footer>
+      <footer className="footer"><div className="page-shell footer-inner"><span>Thoughtfully designed for Sholok Shopping.</span><span className="footer-note"><Check size={11} className="text-primary" /> {cartDesigns.length} concepts <span className="mx-1">·</span> Desktop & mobile <span className="mx-1">·</span> Interactive collection</span></div></footer>
       <div className="live-float" data-testid="live-floating-cart"><span className="live-float-label">Live cart <ArrowDown className="ml-1 inline size-2.5 -rotate-45" /></span><FloatingCart style={selected} count={count} animationKey={animationKey} onOpen={() => setCartOpen(true)} label="Open live floating cart" /></div>
       <ShoppingCartDrawer open={cartOpen} onOpenChange={setCartOpen} count={count} onChange={updateQuantity} onClear={() => { setCount(0); setAnimationKey(current => current + 1); setLastAction('Shopping cart cleared'); }} />
     </div>
