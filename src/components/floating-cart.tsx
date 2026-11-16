@@ -15,12 +15,53 @@ interface FloatingCartProps {
 
 export function FloatingCart({ style, count, animationKey, onOpen, label = 'Open shopping cart' }: FloatingCartProps) {
   const Glyph = style === 'commerce' ? ShoppingBag : ShoppingCart;
-  const isDetailed = ['ribbon-dock', 'orbit-cart', 'ticket-cart', 'jewel-basket', 'signature-stack', 'checkout-pill', 'halo-bag', 'folded-tote'].includes(style);
+  const isDetailed = ['aurora-ribbon', 'velvet-orb', 'monarch-tag', 'silk-scroll', 'prism-panel', 'crown-crest', 'noir-lacquer', 'pearl-drop', 'ribbon-dock', 'orbit-cart', 'ticket-cart', 'jewel-basket', 'signature-stack', 'checkout-pill', 'halo-bag', 'folded-tote'].includes(style);
   const price = formatPrice(cartTotal(count));
   const items = `${count} ${count === 1 ? 'item' : 'items'}`;
 
   function renderDetailedCart() {
     switch (style) {
+      case 'aurora-ribbon':
+        return <>
+          <span className="aurora-face"><ShoppingBag className="detail-bag-glyph" /><span className="detail-items">{items}</span></span>
+          <span className="detail-total aurora-total">{price}</span>
+        </>;
+      case 'velvet-orb':
+        return <>
+          <span className="velvet-face"><ShoppingBag className="detail-bag-glyph" /><span className="detail-items">{items}</span></span>
+          <span className="detail-total velvet-total">{price}</span>
+        </>;
+      case 'monarch-tag':
+        return <>
+          <svg className="tag-thread" viewBox="0 0 60 26" fill="none" aria-hidden="true"><path d="M30 24C30 12 44 12 44 3" stroke="currentColor" strokeWidth="3" strokeLinecap="round" /></svg>
+          <span className="tag-face"><ShoppingBag className="detail-bag-glyph" /><span className="detail-items">{items}</span><span className="detail-total">{price}</span></span>
+        </>;
+      case 'silk-scroll':
+        return <>
+          <span className="silk-face"><ShoppingBag className="detail-bag-glyph" /><span className="detail-items">{items}</span></span>
+          <span className="detail-total silk-total">{price}</span>
+        </>;
+      case 'prism-panel':
+        return <>
+          <span className="prism-face"><ShoppingCart className="detail-bag-glyph" /><span className="detail-items">{items}</span></span>
+          <span className="detail-total prism-total">{price}</span>
+        </>;
+      case 'crown-crest':
+        return <>
+          <svg className="crest-crown" viewBox="0 0 40 16" fill="none" aria-hidden="true"><path d="M3 14 1 4l9 6 10-9 10 9 9-6-2 10Z" stroke="currentColor" strokeWidth="2.5" strokeLinejoin="round" /></svg>
+          <span className="crest-face"><ShoppingBag className="detail-bag-glyph" /><span className="detail-items">{items}</span></span>
+          <span className="detail-total crest-total">{price}</span>
+        </>;
+      case 'noir-lacquer':
+        return <>
+          <span className="noir-face"><ShoppingBag className="detail-bag-glyph" /><span className="detail-items">{items}</span></span>
+          <span className="detail-total noir-total">{price}</span>
+        </>;
+      case 'pearl-drop':
+        return <>
+          <span className="pearl-face"><ShoppingBag className="detail-bag-glyph" /><span className="detail-items">{items}</span></span>
+          <span className="detail-total pearl-total">{price}</span>
+        </>;
       case 'ribbon-dock':
         return <>
           <span className="ribbon-face"><ShoppingBag className="detail-bag-glyph" /><span className="detail-items">{items}</span></span>
