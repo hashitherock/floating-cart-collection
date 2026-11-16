@@ -6,7 +6,7 @@ describe('floating cart collection rules', () => {
     expect(cartDesigns.filter(design => !design.isNew).map(design => design.id)).toEqual(['circular', 'gradient', 'glass', 'three-dimensional', 'outline', 'capsule', 'dual', 'commerce']);
   });
   it('adds four distinct reference-inspired concepts without removing the original eight', () => {
-    expect(cartDesigns.filter(design => design.isNew && design.collection !== 'motion').map(design => design.id)).toEqual(['signature-stack', 'checkout-pill', 'halo-bag', 'folded-tote']);
+    expect(cartDesigns.filter(design => design.isNew && !design.collection).map(design => design.id)).toEqual(['signature-stack', 'checkout-pill', 'halo-bag', 'folded-tote']);
   });
   it('includes four additional motion concepts while preserving all twelve earlier designs', () => {
     expect(cartDesigns.filter(design => design.collection === 'motion').map(design => design.id)).toEqual(['ribbon-dock', 'orbit-cart', 'ticket-cart', 'jewel-basket']);
