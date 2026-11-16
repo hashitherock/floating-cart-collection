@@ -1,4 +1,4 @@
-export type CartStyle = 'ribbon-dock' | 'orbit-cart' | 'ticket-cart' | 'jewel-basket' | 'signature-stack' | 'checkout-pill' | 'halo-bag' | 'folded-tote' | 'circular' | 'gradient' | 'glass' | 'three-dimensional' | 'outline' | 'capsule' | 'dual' | 'commerce';
+export type CartStyle = 'aurora-ribbon' | 'velvet-orb' | 'monarch-tag' | 'silk-scroll' | 'prism-panel' | 'crown-crest' | 'noir-lacquer' | 'pearl-drop' | 'ribbon-dock' | 'orbit-cart' | 'ticket-cart' | 'jewel-basket' | 'signature-stack' | 'checkout-pill' | 'halo-bag' | 'folded-tote' | 'circular' | 'gradient' | 'glass' | 'three-dimensional' | 'outline' | 'capsule' | 'dual' | 'commerce';
 
 export interface CartDesign {
   id: CartStyle;
@@ -10,6 +10,14 @@ export interface CartDesign {
 }
 
 export const cartDesigns: CartDesign[] = [
+  { id: 'aurora-ribbon', name: 'Aurora Ribbon', description: 'A luminous purple arc with a ribbon of light sweeping across your bag.', treatment: 'Premium · Aurora', isNew: true, collection: 'signature' },
+  { id: 'velvet-orb', name: 'Velvet Orb', description: 'Deep velvet purple, softly glowing, with a polished total beneath.', treatment: 'Premium · Velvet', isNew: true, collection: 'signature' },
+  { id: 'monarch-tag', name: 'Monarch Tag', description: 'A boutique price tag, tied with a red-orange thread and a wax seal count.', treatment: 'Premium · Boutique', isNew: true, collection: 'signature' },
+  { id: 'silk-scroll', name: 'Silk Scroll', description: 'A flowing silk panel that unfurls your items and total in one gesture.', treatment: 'Premium · Silk', isNew: true, collection: 'signature' },
+  { id: 'prism-panel', name: 'Prism Panel', description: 'A faceted glass panel catching the light, edged in signature purple.', treatment: 'Premium · Prism', isNew: true, collection: 'signature' },
+  { id: 'crown-crest', name: 'Crown Crest', description: 'A regal crest with a crowned bag and a bold red-orange total banner.', treatment: 'Premium · Regal', isNew: true, collection: 'signature' },
+  { id: 'noir-lacquer', name: 'Noir Lacquer', description: 'Midnight lacquer with a purple inlay and a crimson price seal.', treatment: 'Premium · Noir', isNew: true, collection: 'signature' },
+  { id: 'pearl-drop', name: 'Pearl Drop', description: 'A porcelain pearl with a satin purple band and a dewdrop price tag.', treatment: 'Premium · Pearl', isNew: true, collection: 'signature' },
   { id: 'ribbon-dock', name: 'Ribbon Dock', description: 'A slender purple dock, wrapped with a signature red-orange ribbon.', treatment: 'Tailored · Ribbon', isNew: true, collection: 'motion' },
   { id: 'orbit-cart', name: 'Orbit Cart', description: 'A softly orbiting frame around a bold little shopping basket.', treatment: 'Fluid · Orbit', isNew: true, collection: 'motion' },
   { id: 'ticket-cart', name: 'Ticket Cart', description: 'A crisp white ticket with a purple basket and a vivid price accent.', treatment: 'Fresh · Ticket', isNew: true, collection: 'motion' },

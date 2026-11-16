@@ -13,24 +13,15 @@ export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       { title: 'Floating Cart Collection — Sholok Shopping' },
-      { name: 'description', content: 'Explore sixteen animated Sholok Shopping floating cart designs with live item counts, totals, and a right-side shopping cart.' },
+      { name: 'description', content: 'Explore twenty-four animated Sholok Shopping floating cart designs with live item counts, totals, and a right-side shopping cart.' },
       { property: 'og:title', content: 'Floating Cart Collection — Sholok Shopping' },
-      { property: 'og:description', content: 'Sixteen animated cart concepts. One unmistakable Sholok Shopping identity.' },
+      { property: 'og:description', content: 'Twenty-four animated cart concepts. One unmistakable Sholok Shopping identity.' },
       { property: 'og:type', content: 'website' },
       { name: 'twitter:card', content: 'summary_large_image' },
     ],
   }),
   component: Index,
 });
-
-function BrandMark() {
-  return <svg className="brand-mark" viewBox="0 0 48 48" fill="none" aria-hidden="true">
-    <path d="M10 16h28l-2.5 25h-23L10 16Z" stroke="currentColor" strokeWidth="3" strokeLinejoin="round" />
-    <path d="M18 18v-7a6 6 0 0 1 12 0v7" stroke="currentColor" strokeWidth="3" strokeLinecap="round" />
-    <path d="m18 28 5 5 9-10" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
-    <circle cx="38" cy="12" r="5" className="fill-brand-highlight" />
-  </svg>;
-}
 
 function Index() {
   const [device, setDevice] = useState<'desktop' | 'mobile'>('desktop');
@@ -63,7 +54,7 @@ function Index() {
     <div className="min-h-screen bg-background">
       <header className="site-header">
         <div className="page-shell header-inner">
-          <a href="/" className="brand" aria-label="Sholok Shopping home"><BrandMark /><div className="brand-name">sholok<span>SHOPPING</span></div></a>
+          <a href="/" className="brand" aria-label="Sholok Shopping home"><div className="brand-name">SHOLOK</div></a>
           <nav className="header-nav" aria-label="Collection navigation">
             <Button variant="ghost" className="nav-button" data-active={activeTab === 'all'} onClick={() => setActiveTab('all')}>Design collection</Button>
             <Button variant="ghost" className="nav-button" onClick={() => document.getElementById('cart-playground')?.scrollIntoView({ behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth' })}>Live playground <ArrowUpRight className="size-3" /></Button>
@@ -84,7 +75,7 @@ function Index() {
           <div>
             <div className="eyebrow"><span className="eyebrow-dot" /> Sholok Shopping · Design collection</div>
             <h1 className="page-title">Floating cart collection<span className="text-primary">.</span></h1>
-            <p className="intro-description">A signature bag. A beautiful little detail.<br />Sixteen unique expressions of the Sholok Shopping identity.</p>
+            <p className="intro-description">A signature bag. A beautiful little detail.<br />Twenty-four unique expressions of the Sholok Shopping identity.</p>
           </div>
           <div className="palette" aria-label="Sholok brand colors">
             <div className="palette-color"><span className="palette-swatch bg-primary" /><div><strong>Signature purple</strong><small>#5D0096</small></div></div>

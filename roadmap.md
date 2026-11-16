@@ -1,5 +1,7 @@
 # Sholok Shopping cart collection
 
+- [x] Add eight new premium floating-cart designs and verify gallery, live cart, and tests.
+
 - [x] Animate every cart with gentle idle motion, hover feedback, and add-to-cart feedback.
 - [x] Move the fixed live cart to the vertical middle of the right edge without covering the gallery.
 - [x] Add four distinct new concepts and retain all existing designs.
