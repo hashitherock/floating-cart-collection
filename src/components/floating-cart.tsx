@@ -21,6 +21,47 @@ export function FloatingCart({ style, count, animationKey, onOpen, label = 'Open
 
   function renderDetailedCart() {
     switch (style) {
+      case 'nebula-bloom':
+        return <>
+          <span className="nebula-face"><ShoppingBag className="detail-bag-glyph" /><span className="detail-items">{items}</span></span>
+          <span className="detail-total nebula-total">{price}</span>
+        </>;
+      case 'gilded-frame':
+        return <>
+          <span className="gilded-face"><ShoppingBag className="detail-bag-glyph" /><span className="detail-items">{items}</span></span>
+          <span className="detail-total gilded-total">{price}</span>
+        </>;
+      case 'comet-trail':
+        return <>
+          <span className="comet-face"><ShoppingBag className="detail-bag-glyph" /><span className="detail-items">{items}</span></span>
+          <span className="detail-total comet-total">{price}</span>
+        </>;
+      case 'royal-banner':
+        return <>
+          <span className="banner-face"><ShoppingBag className="detail-bag-glyph" /><span className="detail-items">{items}</span></span>
+          <span className="detail-total banner-total">{price}</span>
+        </>;
+      case 'mosaic-tile':
+        return <>
+          <span className="mosaic-face"><ShoppingBag className="detail-bag-glyph" /><span className="detail-items">{items}</span></span>
+          <span className="detail-total mosaic-total">{price}</span>
+        </>;
+      case 'lantern-glow':
+        return <>
+          <span className="lantern-face"><ShoppingBag className="detail-bag-glyph" /><span className="detail-items">{items}</span></span>
+          <span className="detail-total lantern-total">{price}</span>
+        </>;
+      case 'wave-crest':
+        return <>
+          <svg className="wave-foam" viewBox="0 0 90 22" fill="none" aria-hidden="true"><path d="M2 20c12-16 24-16 34-8 8 6 18 8 26 2 8-5 14-4 26 6" stroke="currentColor" strokeWidth="3" strokeLinecap="round" /></svg>
+          <span className="wave-face"><ShoppingBag className="detail-bag-glyph" /><span className="detail-items">{items}</span></span>
+          <span className="detail-total wave-total">{price}</span>
+        </>;
+      case 'signet-seal':
+        return <>
+          <span className="signet-face"><ShoppingBag className="detail-bag-glyph" /><span className="detail-items">{items}</span></span>
+          <span className="detail-total signet-total">{price}</span>
+        </>;
       case 'aurora-ribbon':
         return <>
           <span className="aurora-face"><ShoppingBag className="detail-bag-glyph" /><span className="detail-items">{items}</span></span>
