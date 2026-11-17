@@ -1,4 +1,4 @@
-export type CartStyle = 'aurora-ribbon' | 'velvet-orb' | 'monarch-tag' | 'silk-scroll' | 'prism-panel' | 'crown-crest' | 'noir-lacquer' | 'pearl-drop' | 'ribbon-dock' | 'orbit-cart' | 'ticket-cart' | 'jewel-basket' | 'signature-stack' | 'checkout-pill' | 'halo-bag' | 'folded-tote' | 'circular' | 'gradient' | 'glass' | 'three-dimensional' | 'outline' | 'capsule' | 'dual' | 'commerce';
+export type CartStyle = 'nebula-bloom' | 'gilded-frame' | 'comet-trail' | 'royal-banner' | 'mosaic-tile' | 'lantern-glow' | 'wave-crest' | 'signet-seal' | 'aurora-ribbon' | 'velvet-orb' | 'monarch-tag' | 'silk-scroll' | 'prism-panel' | 'crown-crest' | 'noir-lacquer' | 'pearl-drop' | 'ribbon-dock' | 'orbit-cart' | 'ticket-cart' | 'jewel-basket' | 'signature-stack' | 'checkout-pill' | 'halo-bag' | 'folded-tote' | 'circular' | 'gradient' | 'glass' | 'three-dimensional' | 'outline' | 'capsule' | 'dual' | 'commerce';
 
 export interface CartDesign {
   id: CartStyle;
@@ -6,10 +6,18 @@ export interface CartDesign {
   description: string;
   treatment: string;
   isNew?: boolean;
-  collection?: 'motion' | 'signature';
+  collection?: 'motion' | 'signature' | 'luxe';
 }
 
 export const cartDesigns: CartDesign[] = [
+  { id: 'nebula-bloom', name: 'Nebula Bloom', description: 'A swirling purple nebula that blooms open around your bag and total.', treatment: 'Luxe · Nebula', isNew: true, collection: 'luxe' },
+  { id: 'gilded-frame', name: 'Gilded Frame', description: 'A gallery frame in warm gold-purple, presenting your cart like art.', treatment: 'Luxe · Gilded', isNew: true, collection: 'luxe' },
+  { id: 'comet-trail', name: 'Comet Trail', description: 'A comet of light circles the bag, leaving a red-orange trail.', treatment: 'Luxe · Comet', isNew: true, collection: 'luxe' },
+  { id: 'royal-banner', name: 'Royal Banner', description: 'A draped royal banner with tassels, carrying your count and total.', treatment: 'Luxe · Royal', isNew: true, collection: 'luxe' },
+  { id: 'mosaic-tile', name: 'Mosaic Tile', description: 'Hand-laid purple mosaic tiles with a crimson grout of light.', treatment: 'Luxe · Mosaic', isNew: true, collection: 'luxe' },
+  { id: 'lantern-glow', name: 'Lantern Glow', description: 'A paper lantern glowing softly, swaying with your cart inside.', treatment: 'Luxe · Lantern', isNew: true, collection: 'luxe' },
+  { id: 'wave-crest', name: 'Wave Crest', description: 'A curling purple wave that crests over a pearl-white price drop.', treatment: 'Luxe · Wave', isNew: true, collection: 'luxe' },
+  { id: 'signet-seal', name: 'Signet Seal', description: 'A pressed wax signet with the Sholok monogram and a ribbon total.', treatment: 'Luxe · Signet', isNew: true, collection: 'luxe' },
   { id: 'aurora-ribbon', name: 'Aurora Ribbon', description: 'A luminous purple arc with a ribbon of light sweeping across your bag.', treatment: 'Premium · Aurora', isNew: true, collection: 'signature' },
   { id: 'velvet-orb', name: 'Velvet Orb', description: 'Deep velvet purple, softly glowing, with a polished total beneath.', treatment: 'Premium · Velvet', isNew: true, collection: 'signature' },
   { id: 'monarch-tag', name: 'Monarch Tag', description: 'A boutique price tag, tied with a red-orange thread and a wax seal count.', treatment: 'Premium · Boutique', isNew: true, collection: 'signature' },
