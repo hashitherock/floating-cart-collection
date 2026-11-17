@@ -1,5 +1,10 @@
 # Sholok Shopping cart collection
 
+- [ ] Finish the eight new premium animated luxe designs (32 total) and verify.
+- [ ] Replace every main cart icon with the Lucide ShoppingBag icon (per uploaded brief).
+- [ ] Audit CSS: remove duplicates/conflicts, verify responsive breakpoints 320-1440px+, no overflow.
+- [ ] Test all designs: badge counts, add-to-cart, hover/touch, animations, no console errors.
+
 - [x] Add eight new premium floating-cart designs and verify gallery, live cart, and tests.
 
 - [x] Animate every cart with gentle idle motion, hover feedback, and add-to-cart feedback.
