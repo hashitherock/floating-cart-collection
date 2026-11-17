@@ -1,4 +1,4 @@
-import { ChevronRight, ShoppingBag, ShoppingBasket, ShoppingCart } from 'lucide-react';
+import { ChevronRight, ShoppingBag } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Tooltip, TooltipContent, TooltipTrigger } from '@/components/ui/tooltip';
 import { cartTotal, formatPrice, type CartStyle } from '@/lib/cart-collection';
@@ -14,13 +14,54 @@ interface FloatingCartProps {
 }
 
 export function FloatingCart({ style, count, animationKey, onOpen, label = 'Open shopping cart' }: FloatingCartProps) {
-  const Glyph = style === 'commerce' ? ShoppingBag : ShoppingCart;
-  const isDetailed = ['aurora-ribbon', 'velvet-orb', 'monarch-tag', 'silk-scroll', 'prism-panel', 'crown-crest', 'noir-lacquer', 'pearl-drop', 'ribbon-dock', 'orbit-cart', 'ticket-cart', 'jewel-basket', 'signature-stack', 'checkout-pill', 'halo-bag', 'folded-tote'].includes(style);
+  const Glyph = ShoppingBag;
+  const isDetailed = ['nebula-bloom', 'gilded-frame', 'comet-trail', 'royal-banner', 'mosaic-tile', 'lantern-glow', 'wave-crest', 'signet-seal', 'aurora-ribbon', 'velvet-orb', 'monarch-tag', 'silk-scroll', 'prism-panel', 'crown-crest', 'noir-lacquer', 'pearl-drop', 'ribbon-dock', 'orbit-cart', 'ticket-cart', 'jewel-basket', 'signature-stack', 'checkout-pill', 'halo-bag', 'folded-tote'].includes(style);
   const price = formatPrice(cartTotal(count));
   const items = `${count} ${count === 1 ? 'item' : 'items'}`;
 
   function renderDetailedCart() {
     switch (style) {
+      case 'nebula-bloom':
+        return <>
+          <span className="nebula-face"><ShoppingBag className="detail-bag-glyph" /><span className="detail-items">{items}</span></span>
+          <span className="detail-total nebula-total">{price}</span>
+        </>;
+      case 'gilded-frame':
+        return <>
+          <span className="gilded-face"><ShoppingBag className="detail-bag-glyph" /><span className="detail-items">{items}</span></span>
+          <span className="detail-total gilded-total">{price}</span>
+        </>;
+      case 'comet-trail':
+        return <>
+          <span className="comet-face"><ShoppingBag className="detail-bag-glyph" /><span className="detail-items">{items}</span></span>
+          <span className="detail-total comet-total">{price}</span>
+        </>;
+      case 'royal-banner':
+        return <>
+          <span className="banner-face"><ShoppingBag className="detail-bag-glyph" /><span className="detail-items">{items}</span></span>
+          <span className="detail-total banner-total">{price}</span>
+        </>;
+      case 'mosaic-tile':
+        return <>
+          <span className="mosaic-face"><ShoppingBag className="detail-bag-glyph" /><span className="detail-items">{items}</span></span>
+          <span className="detail-total mosaic-total">{price}</span>
+        </>;
+      case 'lantern-glow':
+        return <>
+          <span className="lantern-face"><ShoppingBag className="detail-bag-glyph" /><span className="detail-items">{items}</span></span>
+          <span className="detail-total lantern-total">{price}</span>
+        </>;
+      case 'wave-crest':
+        return <>
+          <svg className="wave-foam" viewBox="0 0 90 22" fill="none" aria-hidden="true"><path d="M2 20c12-16 24-16 34-8 8 6 18 8 26 2 8-5 14-4 26 6" stroke="currentColor" strokeWidth="3" strokeLinecap="round" /></svg>
+          <span className="wave-face"><ShoppingBag className="detail-bag-glyph" /><span className="detail-items">{items}</span></span>
+          <span className="detail-total wave-total">{price}</span>
+        </>;
+      case 'signet-seal':
+        return <>
+          <span className="signet-face"><ShoppingBag className="detail-bag-glyph" /><span className="detail-items">{items}</span></span>
+          <span className="detail-total signet-total">{price}</span>
+        </>;
       case 'aurora-ribbon':
         return <>
           <span className="aurora-face"><ShoppingBag className="detail-bag-glyph" /><span className="detail-items">{items}</span></span>
@@ -43,7 +84,7 @@ export function FloatingCart({ style, count, animationKey, onOpen, label = 'Open
         </>;
       case 'prism-panel':
         return <>
-          <span className="prism-face"><ShoppingCart className="detail-bag-glyph" /><span className="detail-items">{items}</span></span>
+          <span className="prism-face"><ShoppingBag className="detail-bag-glyph" /><span className="detail-items">{items}</span></span>
           <span className="detail-total prism-total">{price}</span>
         </>;
       case 'crown-crest':
@@ -69,12 +110,12 @@ export function FloatingCart({ style, count, animationKey, onOpen, label = 'Open
         </>;
       case 'orbit-cart':
         return <>
-          <span className="orbit-face"><ShoppingBasket className="detail-bag-glyph" /><span className="detail-items">{items}</span></span>
+          <span className="orbit-face"><ShoppingBag className="detail-bag-glyph" /><span className="detail-items">{items}</span></span>
           <span className="detail-total orbit-total">{price}</span>
         </>;
       case 'ticket-cart':
         return <>
-          <span className="ticket-icon"><ShoppingCart className="detail-bag-glyph" /></span>
+          <span className="ticket-icon"><ShoppingBag className="detail-bag-glyph" /></span>
           <span className="ticket-details"><span className="detail-items">{items}</span><span className="detail-total">{price}</span></span>
         </>;
       case 'jewel-basket':
@@ -86,7 +127,7 @@ export function FloatingCart({ style, count, animationKey, onOpen, label = 'Open
             <path className="jewel-handle" d="M36 35V24a19 19 0 0 1 38 0v11" />
             <path className="jewel-edge" d="m8 39 22 12h50l22-12" />
           </svg>
-          <span className="jewel-content"><ShoppingBasket className="detail-bag-glyph" /><span className="detail-items">{items}</span><span className="detail-total">{price}</span></span>
+          <span className="jewel-content"><ShoppingBag className="detail-bag-glyph" /><span className="detail-items">{items}</span><span className="detail-total">{price}</span></span>
         </>;
       case 'signature-stack':
         return <>
@@ -107,7 +148,7 @@ export function FloatingCart({ style, count, animationKey, onOpen, label = 'Open
       case 'folded-tote':
         return <>
           <svg className="tote-handle" viewBox="0 0 48 32" fill="none" aria-hidden="true"><path d="M10 29V17a14 14 0 0 1 28 0v12" stroke="currentColor" strokeWidth="4" strokeLinecap="round" /></svg>
-          <span className="tote-face"><ShoppingCart className="detail-bag-glyph" /><span className="detail-items">{items}</span></span>
+          <span className="tote-face"><ShoppingBag className="detail-bag-glyph" /><span className="detail-items">{items}</span></span>
           <span className="detail-total tote-total">{price}</span>
         </>;
       default:

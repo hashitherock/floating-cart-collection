@@ -1,4 +1,4 @@
-import { Minus, Plus, ShoppingCart, Trash2 } from 'lucide-react';
+import { Minus, Plus, ShoppingBag, Trash2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle } from '@/components/ui/sheet';
 import { Tooltip, TooltipContent, TooltipTrigger } from '@/components/ui/tooltip';
@@ -45,7 +45,7 @@ export function ShoppingCartDrawer({ open, onOpenChange, count, onChange, onClea
             <p className="mt-4 text-center text-[10px] text-muted-foreground">Sample product and price. No payment will be taken.</p>
           </div>
         </> : <div className="drawer-empty">
-          <ShoppingCart size={40} strokeWidth={1.3} className="text-primary" />
+          <ShoppingBag size={40} strokeWidth={1.3} className="text-primary" />
           <p>Your cart is empty</p>
           <Button variant="outline" onClick={() => onChange(1)}><Plus /> Add sample sneaker</Button>
         </div>}

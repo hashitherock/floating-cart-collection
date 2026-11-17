@@ -13,7 +13,10 @@ describe('floating cart collection rules', () => {
   });
   it('adds eight premium concepts first while preserving all sixteen earlier designs', () => {
     expect(cartDesigns.filter(design => design.collection === 'signature').map(design => design.id)).toEqual(['aurora-ribbon', 'velvet-orb', 'monarch-tag', 'silk-scroll', 'prism-panel', 'crown-crest', 'noir-lacquer', 'pearl-drop']);
-    expect(cartDesigns).toHaveLength(24);
+  });
+  it('adds eight premium animated luxe concepts first while preserving all twenty-four earlier designs', () => {
+    expect(cartDesigns.filter(design => design.collection === 'luxe').map(design => design.id)).toEqual(['nebula-bloom', 'gilded-frame', 'comet-trail', 'royal-banner', 'mosaic-tile', 'lantern-glow', 'wave-crest', 'signet-seal']);
+    expect(cartDesigns).toHaveLength(32);
   });
   it('updates the badge quantity when a product is added', () => {
     expect(changeCartQuantity(3, 1)).toBe(4);
