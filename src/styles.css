@@ -483,11 +483,9 @@
 .cart-badge.badge-pulse { animation: badge-bump 420ms ease-out; }
 .live-float { position: fixed; right: 24px; top: 50%; transform: translateY(-50%); z-index: 30; }
 .live-float .floating-cart { width: 60px; height: 60px; }
-.live-float .cart-capsule { width: 134px; height: 55px; }
 .live-float .cart-three-dimensional { width: 75px; height: 75px; }
 .live-float .cart-commerce { height: 65px; }
 .live-float .cart-signature-stack { width: 83px; height: 102px; }
-.live-float .cart-checkout-pill { width: 170px; height: 67px; }
 .live-float .cart-halo-bag { width: 91px; height: 105px; }
 .live-float .cart-folded-tote { width: 90px; height: 92px; }
 .live-float .cart-checkout-pill { width: 84px; height: 104px; flex-direction: column; gap: 6px; padding: 10px 4px; border-radius: 19px; }
