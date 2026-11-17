@@ -84,7 +84,7 @@ export function FloatingCart({ style, count, animationKey, onOpen, label = 'Open
         </>;
       case 'prism-panel':
         return <>
-          <span className="prism-face"><ShoppingCart className="detail-bag-glyph" /><span className="detail-items">{items}</span></span>
+          <span className="prism-face"><ShoppingBag className="detail-bag-glyph" /><span className="detail-items">{items}</span></span>
           <span className="detail-total prism-total">{price}</span>
         </>;
       case 'crown-crest':
@@ -110,12 +110,12 @@ export function FloatingCart({ style, count, animationKey, onOpen, label = 'Open
         </>;
       case 'orbit-cart':
         return <>
-          <span className="orbit-face"><ShoppingBasket className="detail-bag-glyph" /><span className="detail-items">{items}</span></span>
+          <span className="orbit-face"><ShoppingBag className="detail-bag-glyph" /><span className="detail-items">{items}</span></span>
           <span className="detail-total orbit-total">{price}</span>
         </>;
       case 'ticket-cart':
         return <>
-          <span className="ticket-icon"><ShoppingCart className="detail-bag-glyph" /></span>
+          <span className="ticket-icon"><ShoppingBag className="detail-bag-glyph" /></span>
           <span className="ticket-details"><span className="detail-items">{items}</span><span className="detail-total">{price}</span></span>
         </>;
       case 'jewel-basket':
@@ -127,7 +127,7 @@ export function FloatingCart({ style, count, animationKey, onOpen, label = 'Open
             <path className="jewel-handle" d="M36 35V24a19 19 0 0 1 38 0v11" />
             <path className="jewel-edge" d="m8 39 22 12h50l22-12" />
           </svg>
-          <span className="jewel-content"><ShoppingBasket className="detail-bag-glyph" /><span className="detail-items">{items}</span><span className="detail-total">{price}</span></span>
+          <span className="jewel-content"><ShoppingBag className="detail-bag-glyph" /><span className="detail-items">{items}</span><span className="detail-total">{price}</span></span>
         </>;
       case 'signature-stack':
         return <>
@@ -148,7 +148,7 @@ export function FloatingCart({ style, count, animationKey, onOpen, label = 'Open
       case 'folded-tote':
         return <>
           <svg className="tote-handle" viewBox="0 0 48 32" fill="none" aria-hidden="true"><path d="M10 29V17a14 14 0 0 1 28 0v12" stroke="currentColor" strokeWidth="4" strokeLinecap="round" /></svg>
-          <span className="tote-face"><ShoppingCart className="detail-bag-glyph" /><span className="detail-items">{items}</span></span>
+          <span className="tote-face"><ShoppingBag className="detail-bag-glyph" /><span className="detail-items">{items}</span></span>
           <span className="detail-total tote-total">{price}</span>
         </>;
       default:
