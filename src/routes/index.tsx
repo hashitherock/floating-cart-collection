@@ -13,9 +13,9 @@ export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       { title: 'Floating Cart Collection — Sholok Shopping' },
-      { name: 'description', content: 'Explore twenty-four animated Sholok Shopping floating cart designs with live item counts, totals, and a right-side shopping cart.' },
+      { name: 'description', content: 'Explore thirty-two animated Sholok Shopping floating cart designs with live item counts, totals, and a right-side shopping cart.' },
       { property: 'og:title', content: 'Floating Cart Collection — Sholok Shopping' },
-      { property: 'og:description', content: 'Twenty-four animated cart concepts. One unmistakable Sholok Shopping identity.' },
+      { property: 'og:description', content: 'Thirty-two animated cart concepts. One unmistakable Sholok Shopping identity.' },
       { property: 'og:type', content: 'website' },
       { name: 'twitter:card', content: 'summary_large_image' },
     ],
@@ -75,7 +75,7 @@ function Index() {
           <div>
             <div className="eyebrow"><span className="eyebrow-dot" /> Sholok Shopping · Design collection</div>
             <h1 className="page-title">Floating cart collection<span className="text-primary">.</span></h1>
-            <p className="intro-description">A signature bag. A beautiful little detail.<br />Twenty-four unique expressions of the Sholok Shopping identity.</p>
+            <p className="intro-description">A signature bag. A beautiful little detail.<br />Thirty-two unique expressions of the Sholok Shopping identity.</p>
           </div>
           <div className="palette" aria-label="Sholok brand colors">
             <div className="palette-color"><span className="palette-swatch bg-primary" /><div><strong>Signature purple</strong><small>#5D0096</small></div></div>
