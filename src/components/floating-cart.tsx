@@ -1,4 +1,4 @@
-import { ChevronRight, ShoppingBag, ShoppingBasket, ShoppingCart } from 'lucide-react';
+import { ChevronRight, ShoppingBag } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Tooltip, TooltipContent, TooltipTrigger } from '@/components/ui/tooltip';
 import { cartTotal, formatPrice, type CartStyle } from '@/lib/cart-collection';
@@ -14,8 +14,8 @@ interface FloatingCartProps {
 }
 
 export function FloatingCart({ style, count, animationKey, onOpen, label = 'Open shopping cart' }: FloatingCartProps) {
-  const Glyph = style === 'commerce' ? ShoppingBag : ShoppingCart;
-  const isDetailed = ['aurora-ribbon', 'velvet-orb', 'monarch-tag', 'silk-scroll', 'prism-panel', 'crown-crest', 'noir-lacquer', 'pearl-drop', 'ribbon-dock', 'orbit-cart', 'ticket-cart', 'jewel-basket', 'signature-stack', 'checkout-pill', 'halo-bag', 'folded-tote'].includes(style);
+  const Glyph = ShoppingBag;
+  const isDetailed = ['nebula-bloom', 'gilded-frame', 'comet-trail', 'royal-banner', 'mosaic-tile', 'lantern-glow', 'wave-crest', 'signet-seal', 'aurora-ribbon', 'velvet-orb', 'monarch-tag', 'silk-scroll', 'prism-panel', 'crown-crest', 'noir-lacquer', 'pearl-drop', 'ribbon-dock', 'orbit-cart', 'ticket-cart', 'jewel-basket', 'signature-stack', 'checkout-pill', 'halo-bag', 'folded-tote'].includes(style);
   const price = formatPrice(cartTotal(count));
   const items = `${count} ${count === 1 ? 'item' : 'items'}`;
 
